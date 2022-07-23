@@ -1,0 +1,119 @@
+@use 'normalize';
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+$white: hsl(0, 0%, 100%);
+$light_grey: hsl(217, 12%, 63%);
+$medium_grey: hsl(216, 12%, 54%);
+$dark_blue: hsl(213, 19%, 18%);
+$very_dark_blue: hsl(216, 12%, 8%);
+$dark_light_blue: hsl(216, 22%, 24%);
+$orange: hsl(25, 97%, 53%);
+
+.center-in-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-in-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.8rem;
+}
+
+body {
+  @extend .center-in-row;
+  width: 100vw;
+  min-height: 100vh;
+  color: $light_grey;
+  background: $very_dark_blue;
+  font-family: 'Overpass', sans-serif;
+}
+
+main {
+  max-width: 345px;
+  min-width: 280px;
+  height: 366px;
+  padding: 2rem;
+  margin: 0 2rem;
+  border-radius: 1.8rem;
+  background: $dark_blue;
+}
+
+.star {
+  @extend .center-in-row;
+  @extend .circle;
+  background: $dark_light_blue;
+}
+
+.title {
+  color: $white;
+  margin: 2rem 0 1rem;
+}
+
+.text {
+  margin: 0;
+  line-height: 1.6rem;
+}
+
+.ratings {
+  @extend .center-in-row;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.btn {
+  @extend .circle;
+  border: none;
+  color: $light_grey;
+  background: $dark_light_blue;
+}
+
+.btn:hover {
+  color: $white;
+  background: $orange;
+}
+
+.submit {
+  width: 100%;
+  height: 2.5rem;
+  color: $white;
+  border: none;
+  border-radius: 1.3rem;
+  background: $orange;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.submit:hover {
+  color: $orange;
+  background: $white;
+}
+
+.sec-result {
+  @extend .center-in-column;
+  display: none;
+}
+
+.show-rating {
+  margin: 1.4rem 0 0;
+  color: $orange;
+  background: $dark_light_blue;
+  padding: 0.4rem 1.3rem;
+  border-radius: 1.5rem;
+}
+
+.thanks-text {
+  @extend .text;
+  font-size: 15.2px;
+  text-align: center;
+}
