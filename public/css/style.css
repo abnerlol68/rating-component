@@ -301,6 +301,11 @@ main {
   background: #fb7413;
 }
 
+.btn:focus {
+  color: white;
+  background: #959eac;
+}
+
 .submit {
   width: 100%;
   height: 2.5rem;

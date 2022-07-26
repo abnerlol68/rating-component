@@ -1,34 +1,17 @@
-let preRating = 0;
-let rating = 0;
+const ratings = document.querySelector('.ratings');
+const result = document.querySelector('#val-rating');
+const submit = document.querySelector('.submit');
+const secRating = document.querySelector('.sec-rating');
+const secResult = document.querySelector('.sec-result');
 
-const getRating = (value) => {
-  if (isNaN(value)) {
-    console.error(`Input for getRating isn't number`);
-    return;
+ratings.addEventListener('click', (event) => {
+  let ratingSelect = event.target.innerText;
+  result.innerText = ratingSelect;
+
+  if (ratingSelect >= 1 && ratingSelect <= 5) {
+    submit.addEventListener('click', () => {
+      secRating.style.display = 'none';
+      secResult.style.display = 'flex';
+    });
   }
-  
-  rating = value;
-
-  const btn = document.getElementsByClassName('btn')[rating - 1];
-  btn.style.color = "hsl(0, 0%, 100%)";
-  btn.style.backgroundColor = "hsl(217, 12%, 63%)";
-
-  const preBtn = document.getElementsByClassName('btn')[preRating - 1];
-
-  if (preBtn === undefined) {
-    preRating = value;
-    return;
-  }
-
-  preBtn.style.color = "hsl(217, 12%, 63%)";
-  preBtn.style.backgroundColor = "hsl(216, 22%, 24%)";
-
-  preRating = value;
-}
-
-const submitRating = () => {
-  const valRating = document.getElementById('val-rating');
-  valRating.innerText = rating;
-  document.getElementsByClassName('sec-result')[0].style.display = "flex";
-  document.getElementsByClassName('sec-rating')[0].style.display = "none";
-}
+});

@@ -82,6 +82,11 @@ main {
   background: $orange;
 }
 
+.btn:focus {
+  color: $white;
+  background: $light_grey;
+}
+
 .submit {
   width: 100%;
   height: 2.5rem;
